@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>QR Code Generator — Menu Link</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<style>
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Work Sans", sans-serif;
+    max-width: 28rem;
+    margin: 3rem auto;
+    padding: 0 1.5rem;
+    color: #1a1a17;
+    text-align: center;
+  }
+  h1 { font-size: 1.3rem; margin-bottom: 0.25rem; }
+  p.hint { color: #8a8578; font-size: 0.9rem; margin-top: 0; }
+  input {
+    width: 100%;
+    padding: 0.7rem 0.9rem;
+    font-size: 1rem;
+    border: 1px solid #d8d5cb;
+    border-radius: 6px;
+    box-sizing: border-box;
+    margin-top: 1rem;
+  }
+  button {
+    margin-top: 0.9rem;
+    padding: 0.7rem 1.4rem;
+    font-size: 0.95rem;
+    background: #3f5a44;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  button:hover { background: #33492f; }
+  #qrcode {
+    margin: 2rem auto 1rem;
+    display: inline-block;
+    padding: 1rem;
+    background: #fff;
+    border: 1px solid #eee;
+  }
+  #download {
+    display: none;
+    margin-top: 0.5rem;
+    color: #3f5a44;
+    text-decoration: underline;
+    font-size: 0.9rem;
+  }
+</style>
+</head>
+<body>
+  <h1>Generate your menu QR code</h1>
+  <p class="hint">Paste your live GitHub Pages URL below (e.g. https://yourname.github.io/restaurant-menu-site/)</p>
+  <input type="url" id="urlInput" placeholder="https://yourname.github.io/restaurant-menu-site/">
+  <br>
+  <button id="generateBtn">Generate QR code</button>
+  <div id="qrcode"></div>
+  <a id="download" download="menu-qr-code.png">Download PNG</a>
+
+  <script>
+    const qrDiv = document.getElementById("qrcode");
+    const downloadLink = document.getElementById("download");
+    let qr;
+
+    document.getElementById("generateBtn").addEventListener("click", () => {
+      const url = document.getElementById("urlInput").value.trim();
+      if (!url) return;
+
+      qrDiv.innerHTML = "";
+      qr = new QRCode(qrDiv, {
+        text: url,
+        width: 256,
+        height: 256,
+        colorDark: "#1a1a17",
+        colorLight: "#ffffff",
+        correctLevel: QRCode.CorrectLevel.M
+      });
+
+      // Give the library a moment to render the canvas/img before enabling download
+      setTimeout(() => {
+        const img = qrDiv.querySelector("img") || qrDiv.querySelector("canvas");
+        if (img && img.tagName === "CANVAS") {
+          downloadLink.href = img.toDataURL("image/png");
+        } else if (img) {
+          downloadLink.href = img.src;
+        }
+        downloadLink.style.display = "inline-block";
+      }, 150);
+    });
+  </script>
+</body>
+</html>
