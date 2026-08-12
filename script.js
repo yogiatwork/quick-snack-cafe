@@ -12,12 +12,12 @@ if ("IntersectionObserver" in window && sections.length && navLinks.length) {
         const link = linkFor(entry.target.id);
         if (!link) return;
         if (entry.isIntersecting) {
-          navLinks.forEach((l) => l.style.color = "");
+          navLinks.forEach((l) => (l.style.color = ""));
           link.style.color = "var(--accent)";
         }
       });
     },
-    { rootMargin: "-45% 0px -50% 0px", threshold: 0 }
+    { rootMargin: "-45% 0px -50% 0px", threshold: 0 },
   );
 
   sections.forEach((section) => observer.observe(section));

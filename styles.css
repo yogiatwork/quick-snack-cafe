@@ -2,7 +2,7 @@
   --ink: #1a1a17;
   --paper: #faf9f6;
   --paper-warm: #f3f1ea;
-  --accent: #3f5a44;      /* deep forest green */
+  --accent: #3f5a44; /* deep forest green */
   --accent-soft: #c9a15a; /* muted brass, used sparingly */
   --muted: #8a8578;
   --line: #e2ded4;
@@ -11,13 +11,23 @@
   --mono: "IBM Plex Mono", "Courier New", monospace;
 }
 
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+}
 
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+}
 
 @media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
-  * { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; }
+  html {
+    scroll-behavior: auto;
+  }
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
 }
 
 body {
@@ -28,7 +38,9 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-a { color: inherit; }
+a {
+  color: inherit;
+}
 
 /* ---------- COVER ---------- */
 
@@ -47,9 +59,11 @@ a { color: inherit; }
   /* page-edge shadow suggesting the cover is about to lift */
   content: "";
   position: absolute;
-  left: 0; right: 0; bottom: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   height: 40px;
-  background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.35));
+  background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.35));
   pointer-events: none;
 }
 
@@ -133,7 +147,9 @@ a { color: inherit; }
   scrollbar-width: none;
 }
 
-.menu-nav-inner::-webkit-scrollbar { display: none; }
+.menu-nav-inner::-webkit-scrollbar {
+  display: none;
+}
 
 .menu-nav-inner a {
   font-family: var(--mono);
@@ -167,13 +183,24 @@ a { color: inherit; }
   animation: rise 0.6s ease forwards;
 }
 
-.menu-section:nth-of-type(1) { animation-delay: 0.02s; }
-.menu-section:nth-of-type(2) { animation-delay: 0.05s; }
-.menu-section:nth-of-type(3) { animation-delay: 0.08s; }
-.menu-section:nth-of-type(4) { animation-delay: 0.1s; }
+.menu-section:nth-of-type(1) {
+  animation-delay: 0.02s;
+}
+.menu-section:nth-of-type(2) {
+  animation-delay: 0.05s;
+}
+.menu-section:nth-of-type(3) {
+  animation-delay: 0.08s;
+}
+.menu-section:nth-of-type(4) {
+  animation-delay: 0.1s;
+}
 
 @keyframes rise {
-  to { opacity: 1; transform: translateY(0); }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .section-title {
@@ -195,7 +222,9 @@ a { color: inherit; }
   border-bottom: 1px solid var(--line);
 }
 
-.menu-item:last-child { border-bottom: none; }
+.menu-item:last-child {
+  border-bottom: none;
+}
 
 .menu-item-head {
   display: flex;
@@ -248,7 +277,9 @@ a { color: inherit; }
   line-height: 1.9;
 }
 
-.menu-footer-address { color: var(--ink); }
+.menu-footer-address {
+  color: var(--ink);
+}
 
 /* ---------- FOCUS STATES ---------- */
 
