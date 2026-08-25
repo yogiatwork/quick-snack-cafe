@@ -1,22 +1,37 @@
 # QuickSnack Cafe — Menu Site
 
-A single-page, static restaurant menu site. No build step, no dependencies — just HTML/CSS/JS.
+A modern, single-page restaurant menu site with food photos and ingredients. No build step, no dependencies — just HTML/CSS/JS.
+
+## Features
+- Responsive card-based menu with food images (via Unsplash)
+- Expandable ingredients list for each menu item
+- Scroll-triggered entrance animations
+- Sticky nav with active section highlighting
+- Mobile-friendly hamburger menu
+- Hero section with background image
+- Multi-column footer with hours, address, and social links
+- Print-friendly styles
+- Accessibility: reduced-motion support, focus-visible, semantic HTML
 
 ## Files
-- `index.html` — the menu page
-- `styles.css` — all styling
-- `script.js` — small script that highlights the active section in the nav
-- `qr-generator.html` — a local tool to make a QR code for your live link (open it in a browser, not part of the public site)
+- `index.html` — the menu page (hero, highlights, menu cards, footer)
+- `styles.css` — all styling (design tokens, grid layout, animations, responsive)
+- `script.js` — scroll animations, nav highlighting, mobile nav toggle
+- `qr-generator.html` — a local tool to make a QR code for your live link (not part of the public site)
 
 ## 1. Edit your content
 Open `index.html` and replace:
-- The restaurant name, tagline, address, and hours in the `<header class="cover">` section
-- The menu items, descriptions, and prices in each `<section class="menu-section">`
+- The restaurant name, tagline, address, and hours
+- Menu items, descriptions, prices, and ingredients in each `<article class="card">`
+- Highlight section cards (Fresh Daily, Quick Service, etc.)
+- Social media links in the footer
+
+Food images are loaded from Unsplash (`source.unsplash.com`). To swap to your own images, replace the `src` on each `<img>` tag. To use local images, put them in an `images/` folder and update the paths.
 
 Colors and fonts live at the top of `styles.css` under `:root` if you want to adjust them.
 
 ## 2. Deploy on GitHub Pages
-1. Create a new GitHub repository (e.g. `restaurant-menu-site`) and push these files to it:
+1. Create a new GitHub repository (e.g. `quick-snack-cafe`) and push these files to it:
    ```bash
    git init
    git add .

@@ -4,7 +4,19 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>QuickSnack Cafe — Menu</title>
-    <meta name="description" content="Menu for QuickSnack Cafe" />
+    <meta name="description" content="Quick bites made fresh daily. Honest, hearty food served fast at QuickSnack Cafe." />
+    <meta name="theme-color" content="#1a1a17" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="QuickSnack Cafe — Menu" />
+    <meta property="og:description" content="Quick bites made fresh daily. Honest, hearty food served fast." />
+    <meta property="og:type" content="restaurant" />
+    <meta property="og:url" content="https://yogiatwork.github.io/quick-snack-cafe/" />
+
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%231a1a17'/><text x='50' y='68' text-anchor='middle' font-family='Georgia,serif' font-size='60' font-weight='500' fill='%23faf9f6'>Q</text></svg>" />
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -14,22 +26,76 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+
     <!-- COVER -->
     <header class="cover">
+      <div class="cover-bg" aria-hidden="true">
+        <img src="https://source.unsplash.com/1600x900/?cafe,food" alt="" class="cover-bg-img" loading="eager" />
+      </div>
+      <div class="cover-overlay" aria-hidden="true"></div>
       <div class="cover-inner">
-        <p class="eyebrow">Quick bites &nbsp;·&nbsp; Made fresh daily</p>
+        <p class="eyebrow">Quick bites &nbsp;&middot;&nbsp; Made fresh daily</p>
         <h1 class="cover-title">QuickSnack<span class="amp">.</span>Cafe</h1>
         <p class="cover-tagline">
-          Honest, hearty food served fast — from morning rolls to a hot bowl of
+          Honest, hearty food served fast &mdash; from morning rolls to a hot bowl of
           soup.
         </p>
         <div class="cover-rule" aria-hidden="true"></div>
         <p class="cover-hint">Scroll to open</p>
       </div>
+      <div class="scroll-indicator" aria-hidden="true">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>
+      </div>
     </header>
+
+    <!-- HIGHLIGHTS -->
+    <section class="highlights">
+      <div class="highlights-inner">
+        <div class="highlight-card">
+          <svg class="highlight-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z" fill="none"/>
+            <path d="M8 14s1.5 2 4 2 4-2 4-2" fill="none"/>
+            <line x1="9" y1="9" x2="9.01" y2="9"/>
+            <line x1="15" y1="9" x2="15.01" y2="9"/>
+          </svg>
+          <h3 class="highlight-title">Fresh Daily</h3>
+          <p class="highlight-desc">Cooked from scratch every morning</p>
+        </div>
+        <div class="highlight-card">
+          <svg class="highlight-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/>
+            <polyline points="12 6 12 12 16 14"/>
+          </svg>
+          <h3 class="highlight-title">Quick Service</h3>
+          <p class="highlight-desc">Ready in minutes, not hours</p>
+        </div>
+        <div class="highlight-card">
+          <svg class="highlight-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="12" y1="1" x2="12" y2="23"/>
+            <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+          </svg>
+          <h3 class="highlight-title">Affordable Prices</h3>
+          <p class="highlight-desc">Great food that won't break the bank</p>
+        </div>
+        <div class="highlight-card">
+          <svg class="highlight-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+          </svg>
+          <h3 class="highlight-title">Made with Love</h3>
+          <p class="highlight-desc">Every dish, crafted with care</p>
+        </div>
+      </div>
+    </section>
 
     <!-- NAV -->
     <nav class="menu-nav" aria-label="Menu sections">
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
       <div class="menu-nav-inner">
         <a href="#mains">Mains</a>
         <a href="#rolls">Rolls &amp; Breakfast</a>
@@ -37,113 +103,335 @@
       </div>
     </nav>
 
-    <!-- PAGES -->
+    <!-- MENU -->
     <main class="pages">
+
+      <!-- ---- MAINS ---- -->
       <section id="mains" class="menu-section">
         <h2 class="section-title">Mains</h2>
-        <ul class="menu-list">
-          <li class="menu-item">
-            <div class="menu-item-head">
-              <span class="menu-item-name">Hamburger</span>
-              <span class="dots" aria-hidden="true"></span>
-              <span class="menu-item-price">£4.50</span>
+        <div class="card-grid">
+
+          <article class="card">
+            <div class="card-image">
+              <img src="https://source.unsplash.com/600x400/?hamburger" alt="Hamburger" loading="lazy" />
             </div>
-          </li>
-          <li class="menu-item">
-            <div class="menu-item-head">
-              <span class="menu-item-name">Chicken Curry &amp; Rice</span>
-              <span class="dots" aria-hidden="true"></span>
-              <span class="menu-item-price">£3.50</span>
+            <div class="card-body">
+              <div class="card-header">
+                <h3 class="card-name">Hamburger</h3>
+                <span class="card-price">&pound;4.50</span>
+              </div>
+              <details class="ingredients">
+                <summary class="ingredients-toggle">Ingredients</summary>
+                <ul class="ingredients-list">
+                  <li>Beef patty</li>
+                  <li>Lettuce</li>
+                  <li>Tomato</li>
+                  <li>Onion</li>
+                  <li>Cheese</li>
+                  <li>Bun</li>
+                  <li>Ketchup</li>
+                  <li>Mustard</li>
+                </ul>
+              </details>
             </div>
-          </li>
-          <li class="menu-item">
-            <div class="menu-item-head">
-              <span class="menu-item-name">Pasta</span>
-              <span class="dots" aria-hidden="true"></span>
-              <span class="menu-item-price">£3.00</span>
+          </article>
+
+          <article class="card">
+            <div class="card-image">
+              <img src="https://source.unsplash.com/600x400/?chicken+curry" alt="Chicken Curry and Rice" loading="lazy" />
             </div>
-          </li>
-          <li class="menu-item">
-            <div class="menu-item-head">
-              <span class="menu-item-name">Pennie with Bacon &amp; Eggs</span>
-              <span class="dots" aria-hidden="true"></span>
-              <span class="menu-item-price">£3.00</span>
+            <div class="card-body">
+              <div class="card-header">
+                <h3 class="card-name">Chicken Curry &amp; Rice</h3>
+                <span class="card-price">&pound;3.50</span>
+              </div>
+              <details class="ingredients">
+                <summary class="ingredients-toggle">Ingredients</summary>
+                <ul class="ingredients-list">
+                  <li>Chicken</li>
+                  <li>Onion</li>
+                  <li>Garlic</li>
+                  <li>Ginger</li>
+                  <li>Curry powder</li>
+                  <li>Coconut milk</li>
+                  <li>Basmati rice</li>
+                </ul>
+              </details>
             </div>
-          </li>
-          <li class="menu-item">
-            <div class="menu-item-head">
-              <span class="menu-item-name">Hot Dog</span>
-              <span class="dots" aria-hidden="true"></span>
-              <span class="menu-item-price">£2.00</span>
+          </article>
+
+          <article class="card">
+            <div class="card-image">
+              <img src="https://source.unsplash.com/600x400/?pasta" alt="Pasta" loading="lazy" />
             </div>
-            <p class="menu-item-desc">Add-on</p>
-          </li>
-        </ul>
+            <div class="card-body">
+              <div class="card-header">
+                <h3 class="card-name">Pasta</h3>
+                <span class="card-price">&pound;3.00</span>
+              </div>
+              <details class="ingredients">
+                <summary class="ingredients-toggle">Ingredients</summary>
+                <ul class="ingredients-list">
+                  <li>Pasta</li>
+                  <li>Olive oil</li>
+                  <li>Garlic</li>
+                  <li>Tomato sauce</li>
+                  <li>Basil</li>
+                  <li>Parmesan</li>
+                </ul>
+              </details>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-image">
+              <img src="https://source.unsplash.com/600x400/?penne+pasta" alt="Penne with Bacon and Eggs" loading="lazy" />
+            </div>
+            <div class="card-body">
+              <div class="card-header">
+                <h3 class="card-name">Penne with Bacon &amp; Eggs</h3>
+                <span class="card-price">&pound;3.00</span>
+              </div>
+              <details class="ingredients">
+                <summary class="ingredients-toggle">Ingredients</summary>
+                <ul class="ingredients-list">
+                  <li>Penne pasta</li>
+                  <li>Bacon</li>
+                  <li>Eggs</li>
+                  <li>Butter</li>
+                  <li>Pepper</li>
+                  <li>Chives</li>
+                </ul>
+              </details>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-image">
+              <img src="https://source.unsplash.com/600x400/?hotdog" alt="Hot Dog" loading="lazy" />
+            </div>
+            <div class="card-body">
+              <div class="card-header">
+                <h3 class="card-name">Hot Dog</h3>
+                <span class="card-price">&pound;2.00</span>
+              </div>
+              <p class="card-note">Add-on</p>
+              <details class="ingredients">
+                <summary class="ingredients-toggle">Ingredients</summary>
+                <ul class="ingredients-list">
+                  <li>Sausage</li>
+                  <li>Hot dog bun</li>
+                  <li>Mustard</li>
+                  <li>Ketchup</li>
+                  <li>Onions</li>
+                </ul>
+              </details>
+            </div>
+          </article>
+
+        </div>
       </section>
 
+      <!-- ---- ROLLS & BREAKFAST ---- -->
       <section id="rolls" class="menu-section">
         <h2 class="section-title">Rolls &amp; Breakfast</h2>
-        <ul class="menu-list">
-          <li class="menu-item">
-            <div class="menu-item-head">
-              <span class="menu-item-name">Omelette Paratha Egg Roll</span>
-              <span class="dots" aria-hidden="true"></span>
-              <span class="menu-item-price">£4.00</span>
+        <div class="card-grid">
+
+          <article class="card">
+            <div class="card-image">
+              <img src="https://source.unsplash.com/600x400/?egg+omelette" alt="Omelette Paratha Egg Roll" loading="lazy" />
             </div>
-            <p class="menu-item-desc">Can be swapped for a plain egg roll</p>
-          </li>
-          <li class="menu-item">
-            <div class="menu-item-head">
-              <span class="menu-item-name">Bacon Scones with Morning Roll</span>
-              <span class="dots" aria-hidden="true"></span>
-              <span class="menu-item-price">£3.00</span>
+            <div class="card-body">
+              <div class="card-header">
+                <h3 class="card-name">Omelette Paratha Egg Roll</h3>
+                <span class="card-price">&pound;4.00</span>
+              </div>
+              <p class="card-note">Can be swapped for a plain egg roll</p>
+              <details class="ingredients">
+                <summary class="ingredients-toggle">Ingredients</summary>
+                <ul class="ingredients-list">
+                  <li>Eggs</li>
+                  <li>Paratha</li>
+                  <li>Onion</li>
+                  <li>Green chilli</li>
+                  <li>Coriander</li>
+                  <li>Salt</li>
+                </ul>
+              </details>
             </div>
-          </li>
-          <li class="menu-item">
-            <div class="menu-item-head">
-              <span class="menu-item-name"
-                >Morning Roll with Egg &amp; Bacon</span
-              >
-              <span class="dots" aria-hidden="true"></span>
-              <span class="menu-item-price">£2.00</span>
+          </article>
+
+          <article class="card">
+            <div class="card-image">
+              <img src="https://source.unsplash.com/600x400/?bacon+roll" alt="Bacon Scones with Morning Roll" loading="lazy" />
             </div>
-            <p class="menu-item-desc">Add-on</p>
-          </li>
-          <li class="menu-item">
-            <div class="menu-item-head">
-              <span class="menu-item-name">Beans &amp; Egg</span>
-              <span class="dots" aria-hidden="true"></span>
-              <span class="menu-item-price">£2.00</span>
+            <div class="card-body">
+              <div class="card-header">
+                <h3 class="card-name">Bacon Scones with Morning Roll</h3>
+                <span class="card-price">&pound;3.00</span>
+              </div>
+              <details class="ingredients">
+                <summary class="ingredients-toggle">Ingredients</summary>
+                <ul class="ingredients-list">
+                  <li>Bacon</li>
+                  <li>Scones</li>
+                  <li>Butter</li>
+                  <li>Morning roll</li>
+                </ul>
+              </details>
             </div>
-          </li>
-        </ul>
+          </article>
+
+          <article class="card">
+            <div class="card-image">
+              <img src="https://source.unsplash.com/600x400/?breakfast+roll" alt="Morning Roll with Egg and Bacon" loading="lazy" />
+            </div>
+            <div class="card-body">
+              <div class="card-header">
+                <h3 class="card-name">Morning Roll with Egg &amp; Bacon</h3>
+                <span class="card-price">&pound;2.00</span>
+              </div>
+              <p class="card-note">Add-on</p>
+              <details class="ingredients">
+                <summary class="ingredients-toggle">Ingredients</summary>
+                <ul class="ingredients-list">
+                  <li>Eggs</li>
+                  <li>Bacon</li>
+                  <li>Morning roll</li>
+                  <li>Butter</li>
+                </ul>
+              </details>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-image">
+              <img src="https://source.unsplash.com/600x400/?beans+egg" alt="Beans and Egg" loading="lazy" />
+            </div>
+            <div class="card-body">
+              <div class="card-header">
+                <h3 class="card-name">Beans &amp; Egg</h3>
+                <span class="card-price">&pound;2.00</span>
+              </div>
+              <details class="ingredients">
+                <summary class="ingredients-toggle">Ingredients</summary>
+                <ul class="ingredients-list">
+                  <li>Baked beans</li>
+                  <li>Eggs</li>
+                  <li>Toast</li>
+                  <li>Butter</li>
+                  <li>Pepper</li>
+                </ul>
+              </details>
+            </div>
+          </article>
+
+        </div>
       </section>
 
+      <!-- ---- SOUPS ---- -->
       <section id="soups" class="menu-section">
         <h2 class="section-title">Soups</h2>
-        <ul class="menu-list">
-          <li class="menu-item">
-            <div class="menu-item-head">
-              <span class="menu-item-name">Tomato Soup</span>
-              <span class="dots" aria-hidden="true"></span>
-              <span class="menu-item-price">£3.00</span>
+        <div class="card-grid">
+
+          <article class="card">
+            <div class="card-image">
+              <img src="https://source.unsplash.com/600x400/?tomato+soup" alt="Tomato Soup" loading="lazy" />
             </div>
-          </li>
-          <li class="menu-item">
-            <div class="menu-item-head">
-              <span class="menu-item-name">Vegetable Lentil Soup</span>
-              <span class="dots" aria-hidden="true"></span>
-              <span class="menu-item-price">£3.00</span>
+            <div class="card-body">
+              <div class="card-header">
+                <h3 class="card-name">Tomato Soup</h3>
+                <span class="card-price">&pound;3.00</span>
+              </div>
+              <details class="ingredients">
+                <summary class="ingredients-toggle">Ingredients</summary>
+                <ul class="ingredients-list">
+                  <li>Tomatoes</li>
+                  <li>Onion</li>
+                  <li>Garlic</li>
+                  <li>Basil</li>
+                  <li>Cream</li>
+                  <li>Vegetable stock</li>
+                </ul>
+              </details>
             </div>
-          </li>
-        </ul>
+          </article>
+
+          <article class="card">
+            <div class="card-image">
+              <img src="https://source.unsplash.com/600x400/?lentil+soup" alt="Vegetable Lentil Soup" loading="lazy" />
+            </div>
+            <div class="card-body">
+              <div class="card-header">
+                <h3 class="card-name">Vegetable Lentil Soup</h3>
+                <span class="card-price">&pound;3.00</span>
+              </div>
+              <details class="ingredients">
+                <summary class="ingredients-toggle">Ingredients</summary>
+                <ul class="ingredients-list">
+                  <li>Red lentils</li>
+                  <li>Carrot</li>
+                  <li>Onion</li>
+                  <li>Celery</li>
+                  <li>Cumin</li>
+                  <li>Vegetable stock</li>
+                </ul>
+              </details>
+            </div>
+          </article>
+
+        </div>
       </section>
 
-      <footer class="menu-footer">
-        <p>Please tell us about any allergies.</p>
-        <p class="menu-footer-address">QuickSnack Cafe</p>
-      </footer>
     </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h3 class="footer-brand">QuickSnack<span class="amp">.</span>Cafe</h3>
+          <p class="footer-about">Honest, hearty food served fast. Your neighbourhood cafe for quick bites and warm meals.</p>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-heading">Opening Hours</h4>
+          <ul class="footer-list">
+            <li>Mon &ndash; Fri: 7:00 AM &ndash; 6:00 PM</li>
+            <li>Saturday: 8:00 AM &ndash; 4:00 PM</li>
+            <li>Sunday: 9:00 AM &ndash; 2:00 PM</li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-heading">Find Us</h4>
+          <ul class="footer-list">
+            <li>123 High Street</li>
+            <li>London, UK</li>
+            <li class="footer-allergy">Please tell us about any allergies.</li>
+          </ul>
+          <div class="social-links">
+            <a href="#" aria-label="Instagram">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                <circle cx="12" cy="12" r="5"/>
+                <circle cx="17.5" cy="6.5" r="1.25" fill="currentColor" stroke="none"/>
+              </svg>
+            </a>
+            <a href="#" aria-label="Facebook">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+              </svg>
+            </a>
+            <a href="tel:+441234567890" aria-label="Call us">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 QuickSnack Cafe. All rights reserved.</p>
+      </div>
+    </footer>
 
     <script src="script.js"></script>
   </body>
